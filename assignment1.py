@@ -14,6 +14,14 @@ data.hist()
 data.plot(kind='box',subplots=True,layout=(5,5),sharex=False,sharey=False)
 X = data.iloc[:,2:15]
 y = data.iloc[:,0]
+'''
+from sklearn.ensemble import RandomForestClassifier
+classifier = RandomForestClassifier(n_estimators=10,criterion='entropy',random_state=0)
+classifier.fit(X,y)
+y_pred=classifier.predict(X_train)
+print(y_pred)
+'''
+
 from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier(n_neighbors =3)
 knn.fit(X,y)
